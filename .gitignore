@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# IDE
+.continue/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Frontend specific
+frontend/dist/
+frontend/node_modules/
+
+# Backend specific
+backend/dist/
+backend/node_modules/
+
+# Temp files
+*.tmp
+.cache/

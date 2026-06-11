@@ -1,0 +1,26 @@
+[
+  {
+    "initialIndex": 0,
+    "name": "Закупка",
+    "x": 173,
+    "y": 100,
+    "nextSteps": [2],
+    "color": "#666666"
+  },
+  {
+    "initialIndex": 1,
+    "name": "Движение до ПТО",
+    "x": 583,
+    "y": 136,
+    "nextSteps": [3],
+    "color": "#aa8800"
+  },
+  {
+    "initialIndex": 2,
+    "name": "Отправка продавцом",
+    "x": 500,
+    "y": 52,
+    "nextSteps": [1, 4],
+    "color": "#0044aa"
+  }
+]
