@@ -28,7 +28,7 @@
           <col style="width: 170px" />
           <col style="width: 50px" />
           <col style="width: 50px" />
-          <col style="width: 120px" />
+          <col style="width: 250px" />
           <col style="width: 32px" />
         </colgroup>
         <thead>
@@ -78,12 +78,13 @@
             <td>
               <div class="td-box transitions-cell">
                 <template v-if="step.nextSteps && step.nextSteps.length">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" :stroke="getBlockColor(step.color)" stroke-width="1.5" class="doc-icon">
-                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/>
-                    <path d="M14 2v6h6"/>
-                  </svg>
-                  <span class="transitions-text" :title="getTransitionNames(step)">
-                    {{ truncate(getTransitionNames(step), 20) }}
+                  <span v-for="(nextIdx, i) in step.nextSteps" :key="nextIdx" class="transition-group">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" :stroke="getStepColor(nextIdx)" stroke-width="1.5" class="doc-icon">
+                      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/>
+                      <path d="M14 2v6h6"/>
+                    </svg>
+                    <span class="transition-name">{{ getStepName(nextIdx) }}</span>
+                    <span v-if="i < step.nextSteps.length - 1" class="transition-comma">,</span>
                   </span>
                 </template>
               </div>
@@ -124,21 +125,24 @@ function truncate(text: string, maxLen: number): string {
 }
 
 function getBlockColor(color: string): string {
-  if (!color || color === '#ffffff' || color === '#fff' || color === '#F5F5F5' || color === '#f5f5f5') {
+  if (!color) {
     return '#8eaad4'
   }
   return color
 }
 
 function getStepName(index: number): string {
-  const step = store.steps.find((s: any) => s.initialIndex === index)
+  const allSteps = store.steps.length > 0 ? store.steps : store.filteredSteps
+  const step = allSteps.find((s: any) => s.initialIndex === index)
   return step ? step.name : String(index)
 }
 
-function getTransitionNames(step: any): string {
-  if (!step.nextSteps || !step.nextSteps.length) return ''
-  return step.nextSteps.map((idx: number) => getStepName(idx)).join(', ')
+function getStepColor(index: number): string {
+  const step = store.steps.find((s: any) => s.initialIndex === index)
+  return step ? getBlockColor(step.color) : '#8eaad4'
 }
+
+
 
 function selectStep(index: number) {
   store.selectStep(store.selectedStepIndex === index ? null : index)
@@ -181,7 +185,9 @@ function cancelEditing() {
   margin: 0;
   font-size: 13px;
   font-weight: 600;
-  color: #333;
+  color: #555;
+  padding: 4px 8px;
+  border-radius: 3px;
 }
 
 .btn-add {
@@ -246,9 +252,9 @@ function cancelEditing() {
 
 .data-table thead th {
   background: #f8f8f8;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 9px;
-  color: #444;
+  color: #555;
   border-bottom: none;
   white-space: nowrap;
   height: 25px;
@@ -325,19 +331,21 @@ function cancelEditing() {
   display: flex;
   align-items: center;
   gap: 4px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 250px;
 }
 
 .doc-icon {
   flex-shrink: 0;
+  margin-right: 2px;
 }
 
-.transitions-text {
+.transition-name {
   color: #222;
   font-size: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  flex: 1;
 }
 
 

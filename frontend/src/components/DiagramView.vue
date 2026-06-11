@@ -159,7 +159,7 @@ const allLinks = computed<LinkEdge[]>(() => {
 })
 
 function getBlockColor(color: string): string {
-  if (!color || color === '#ffffff' || color === '#fff' || color === '#F5F5F5' || color === '#f5f5f5') {
+  if (!color) {
     return '#8eaad4'
   }
   return color

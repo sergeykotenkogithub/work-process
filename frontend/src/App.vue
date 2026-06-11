@@ -157,8 +157,8 @@ onMounted(() => {
 }
 
 .sidebar {
-  width: 600px;
-  min-width: 600px;
+  width: 625px;
+  min-width: 625px;
   background: #ffffff;
   border-right: 1px solid #e0e0e0;
   overflow-y: auto;

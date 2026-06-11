@@ -158,13 +158,5 @@
 		"y": 795,
 		"nextSteps": [],
 		"color": "#0044aa"
-	},
-	{
-		"initialIndex": 16,
-		"name": "Шаг 17",
-		"x": 0,
-		"y": 0,
-		"nextSteps": [],
-		"color": "#F5F5F5"
 	}
 ]
