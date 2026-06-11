@@ -261,6 +261,7 @@ function cancelEditing() {
   padding: 0 3px;
   box-sizing: border-box;
   position: sticky;
+  z-index: 1;
   top: 0;
 }
 
