@@ -330,7 +330,6 @@ function cancelEditing() {
 .transitions-cell {
   display: flex;
   align-items: center;
-  gap: 4px;
   flex-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -338,14 +337,25 @@ function cancelEditing() {
   max-width: 250px;
 }
 
+.transition-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
 .doc-icon {
   flex-shrink: 0;
-  margin-right: 2px;
 }
 
 .transition-name {
   color: #222;
   font-size: 10px;
+}
+
+.transition-comma {
+  color: #222;
+  font-size: 10px;
+  margin-right: 2px;
 }
 
 
