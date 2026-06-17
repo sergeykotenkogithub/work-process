@@ -21,7 +21,7 @@ export function createApp(
   app.use(cors());
   app.use(express.json());
 
-  app.use('/workflow', createGetDataRouter(workflowRepository));
+  app.use('/api/workflow', createGetDataRouter(workflowRepository));
 
   // OpenAPI: спецификация пересобирается при каждом GET (подхватываются JSDoc из кода).
   app.get('/openapi.json', (_req, res) => {

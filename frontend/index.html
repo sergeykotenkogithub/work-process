@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta charset="UTF-8" /><link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workflow Editor</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="app">
+        <div class="left-strip">
+          <div class="strip-icons">
+          </div>
+          <div class="strip-bottom">
+            <div class="person-btn" title="Пользователь">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <circle cx="12" cy="8" r="4.5"/>
+                <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="main-content">
+          <header class="header">
+            <span class="header-title"></span>
+          </header>
+          <main class="main">
+            <aside class="sidebar" id="table-container">
+              <!-- Table microfrontend will be mounted here -->
+            </aside>
+            <section class="diagram-area" id="diagram-container">
+              <!-- Diagram microfrontend will be mounted here -->
+            </section>
+          </main>
+          <footer class="footer"></footer>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

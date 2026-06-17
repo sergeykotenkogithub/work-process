@@ -11,6 +11,11 @@ build/
 .idea/
 *.swp
 *.swo
+.aider.tags.cache.v4
+.aider.chat.history.md
+.aider.conf.yml
+.aider.input.history
+.claude
 
 # OS
 .DS_Store

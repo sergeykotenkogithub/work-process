@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f3f5f8;
+  color: #263238;
+}
+
+/* Layout from original App.vue */
+.app {
+  display: flex;
+  height: 100vh;
+  font-family: 'Open Sans', 'Segoe UI', Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+.left-strip {
+  width: 48px;
+  min-width: 48px;
+  background: #aa8800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  position: relative;
+}
+
+.strip-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.strip-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.strip-icon:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.strip-icon.active {
+  background: rgba(255,255,255,0.12);
+}
+
+.strip-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.yellow-line {
+  width: 100%;
+  height: 3px;
+  background: #aa8800;
+  margin-bottom: 10px;
+}
+
+.person-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(184, 134, 11, 0.15);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.person-btn:hover {
+  background: rgba(184, 134, 11, 0.3);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  height: 44px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  padding: 25px;
+  box-sizing: border-box;
+  background: white;
+}
+
+.footer {
+  height: 44px;
+  background: #ffffff;
+  border-top: none;
+}
+
+.sidebar {
+  width: 625px;
+  min-width: 625px;
+  background: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+}
+
+.diagram-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+/* Reset for button, input etc */
+button,
+input {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+  border: 2px solid #f8fafc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
